@@ -1,0 +1,278 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Utilitas: Container untuk membatasi lebar konten */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Warna Kunci */
+:root {
+    --primary-color: #0070f3;
+    --secondary-color: #555;
+    --text-dark: #1a1a1a;
+    --text-light: #f4f4f4;
+    --bg-dark: #0f172a;
+}
+
+/* Tombol (Button Styling) */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 112, 243, 0.1);
+}
+
+.btn-large {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
+
+/* 1. Header dan Navigasi */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; /* Menjauhkan elemen (Logo, Nav, Aksi) */
+    align-items: center; /* Meratakan vertikal */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 2. Hero Section */
+.hero-section {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.hero-section .subtitle {
+    font-size: 1.4rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 3. Content Block */
+.content-block {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.content-block h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    /* Grid 3x3 yang memastikan simetri */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    
+    /* MENGHAPUS SEMUA KODE PENENGAHAN KHUSUS (width: fit-content) 
+       karena sekarang kita punya 3 kolom simetris */
+    max-width: 1200px; /* Batasi lebar agar tetap di tengah */
+    margin: 0 auto; /* Tengah-kan grid di dalam container */
+}
+
+.feature-item {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    
+    /* --- PERBAIKAN: TEKS RATA TENGAH HORIZONTAL --- */
+    text-align: center; 
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 112, 243, 0.1);
+}
+
+.feature-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.feature-item p {
+    color: #666;
+}
+
+
+/* 4. Footer */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 50px 0 20px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Contoh Sederhana untuk Responsif */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .main-nav {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+    }
+    
+    .main-nav ul li {
+        margin-left: 0;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .footer-links > div {
+        flex-basis: 45%;
+        margin-bottom: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Di layar kecil, jadikan 1 kolom saja */
+    }
+}
