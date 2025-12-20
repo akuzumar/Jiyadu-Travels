@@ -76,8 +76,8 @@ body {
 
 .main-header .container {
     display: flex;
-    justify-content: space-between; /* Menjauhkan elemen (Logo, Nav, Aksi) */
-    align-items: center; /* Meratakan vertikal */
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 .logo {
@@ -140,7 +140,7 @@ body {
 
 /* 3. Content Block */
 .content-block {
-    padding: 80px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -151,25 +151,21 @@ body {
 }
 
 .features-grid {
-    display: grid;
-    /* Grid 3x3 yang memastikan simetri */
-    grid-template-columns: repeat(3, 1fr); 
+    display: flex;           
+    flex-wrap: wrap;        
+    justify-content: center; 
     gap: 30px;
-    
-    /* MENGHAPUS SEMUA KODE PENENGAHAN KHUSUS (width: fit-content) 
-       karena sekarang kita punya 3 kolom simetris */
-    max-width: 1500px; /* Batasi lebar agar tetap di tengah */
-    margin: 0 auto; /* Tengah-kan grid di dalam container */
+    max-width: 1500px;
+    margin: 0 auto;         
 }
 
 .feature-item {
+    flex: 0 1 450px;        
     padding: 30px;
     border: 1px solid #eee;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
-    
-    /* --- PERBAIKAN: TEKS RATA TENGAH HORIZONTAL --- */
     text-align: center; 
 }
 
@@ -273,6 +269,118 @@ body {
     }
 
     .features-grid {
-        grid-template-columns: 1fr; /* Di layar kecil, jadikan 1 kolom saja */
+        grid-template-columns: 1fr; 
     }
+}
+/* Gaya untuk pemicu teks */
+.popup-trigger {
+    font-style: italic;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Overlay Hitam Transparan */
+.ios-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    z-index: 1001;
+}
+
+.ios-overlay.active {
+    display: block;
+}
+
+.ios-action-sheet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1001;
+    width: 90%;
+    max-width: 380px;
+}
+
+.ios-action-sheet.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Grup Tombol */
+.ios-group {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ios-group button {
+    background: transparent;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    color: #007aff; /* Warna biru khas iOS */
+    padding: 16px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ios-group button:last-child {
+    border-bottom: none;
+}
+
+.ios-group button:active {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Tombol Batal/Cancel */
+.cancel-btn {
+    font-weight: 700 !important;
+    color: #ff3b30 !important; /* Warna merah iOS */
+}
+/* Tambahkan ini di bagian CSS pop-up sebelumnya */
+.ios-header {
+    text-align: center;
+    padding: 12px;
+    font-size: 0.85rem;
+    color: #8e8e93; /* Warna abu-abu teks iOS */
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 14px 14px 0 0;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+/* Pastikan grup tombol di bawah header tidak punya border radius atas */
+.ios-header + .ios-group {
+    border-radius: 0 0 14px 14px;
+}
+
+.popup-trigger {
+    font-style: italic;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.popup-trigger:hover {
+    opacity: 0.7;
 }

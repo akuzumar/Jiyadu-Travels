@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan Kami - Jiyadu Travel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layanankami.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="tutorialdaftar.html">Turorial Daftar</a></li>
+                    <li><a href="tutorialdaftar.html">Tutorial Daftar</a></li>
                     <li><a href="layanankami.html">Layanan Kami</a></li>
                     <li><a href="produkkami.html">Produk Kami</a></li>
                     <li><a href="kerjasama.html">Kerja Sama</a></li>
@@ -32,8 +32,55 @@
 
     <section class="hero-section">
         <div class="container">
-            <h1>Layanan Kami</h1>
-            <p class="subtitle">Daftar layanan perjalanan terbaik untuk Anda.</p>
+            <h1 style="color: #000000;">Paket Berdasarkan Fasilitas (Tingkat Kenyamanan)</h1>
+        </div>
+    </section>
+
+    <section class="content-block">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Paket Umrah Reguler<br>(Ekonomis)</h3>
+                    <p>Solusi ibadah yang tepat bagi Anda yang mengutamakan nilai ekonomis tanpa mengurangi kekhusyukan. Menggunakan fasilitas hotel bintang 3 atau 4 dengan jarak yang terjangkau, serta bimbingan manasik yang lengkap untuk memastikan ibadah Anda sesuai tuntunan.<br><br><br><br></p>
+                    <span class="popup-trigger" onclick="openActionSheet('lebihdetailpaketreguler.html', 'benefitpaketreguler.html')">
+    *klik teks ini untuk info lebih lanjut
+</span>
+                </div>
+                <div class="feature-item">
+                    <h3>Paket Umrah Premium<br>(VVIP)</h3>
+                    <p>Nikmati kenyamanan maksimal dengan fasilitas hotel bintang 5 yang berada tepat di pelataran Masjidil Haram dan Masjid Nabawi. Paket ini menawarkan kemudahan akses, pelayanan makanan selera nusantara yang melimpah, dan transportasi bus eksklusif selama di Tanah Suci.<br><br><br><br></p>
+                  <span class="popup-trigger" onclick="openActionSheet('lebihdetailpaketpremium.html', 'benefitpaketpremium.html')">
+    *klik teks ini untuk info lebih lanjut
+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-section" style="background: white !important;">
+        <div class="container">
+            <h1 style="color: #000000;">Berdasarkan Durasi (Lama Perjalanan)</h1>
+        </div>
+    </section>
+
+    <section class="content-block" style="background: white !important;">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Paket Umrah Itikaf<br>(15 Hari)</h3>
+                    <p>Solusi ibadah yang tepat bagi Anda yang mengutamakan nilai ekonomis tanpa mengurangi kekhusyukan. Menggunakan fasilitas hotel bintang 3 atau 4 dengan jarak yang terjangkau, serta bimbingan manasik yang lengkap.<br><br><br><br></p>
+                    <span class="popup-trigger" onclick="openActionSheet('lebihdetailitikaf15.html', 'benefititikaf15.html')">
+    *klik teks ini untuk info lebih lanjut
+</span>
+                </div>
+                <div class="feature-item">
+                    <h3>Paket Umrah Itikaf<br>(30 Hari)</h3>
+                    <p>Nikmati kenyamanan maksimal dengan fasilitas hotel bintang 5 yang berada tepat di pelataran Masjidil Haram dan Masjid Nabawi. Paket ini menawarkan kemudahan akses dan transportasi bus eksklusif.<br><br><br><br></p>
+                  <span class="popup-trigger" onclick="openActionSheet('lebihdetailitikaf30.html', 'benefititikaf30.html')">
+    *klik teks ini untuk info lebih lanjut
+</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -44,6 +91,44 @@
             </div>
         </div>
     </footer>
+<div class="ios-overlay" id="overlay" onclick="closeActionSheet()"></div>
+<div class="ios-action-sheet" id="actionSheet">
+    <div class="ios-group">
+    <button id="btn-detail">Lihat Informasi Lebih Detail</button>
+    <button id="btn-benefit">Benefit yang Didapat</button>
+    <button onclick="location.href='daftar.html'">Langsung Daftar</button>
+    <button onclick="window.open('https://wa.me/6285161808524','_blank')">
+        Masih Bingung?
+    </button>
+    <button class="cancel-btn" onclick="closeActionSheet()">Batal</button>
+</div>
+
+<script>
+    function openActionSheet() {
+        document.getElementById('overlay').classList.add('active');
+        document.getElementById('actionSheet').classList.add('active');
+    }
+
+    function closeActionSheet() {
+        document.getElementById('overlay').classList.remove('active');
+        document.getElementById('actionSheet').classList.remove('active');
+    }
+</script>
+<div class="ios-overlay" id="overlay" onclick="closeActionSheet()"></div>
+
+<div class="ios-action-sheet" id="actionSheet">
+    <div class="ios-group">
+        <button id="btn-detail">Lihat Informasi Lebih Detail</button>
+        <button id="btn-benefit">Benefit yang Didapat</button>
+        <button onclick="location.href='daftar.html'">Langsung Daftar</button>
+        <button onclick="window.open('https://wa.me/6285161808524','_blank')">
+            Masih Bingung?
+        </button>
+    </div>
+    <div class="ios-group">
+        <button class="cancel-btn" onclick="closeActionSheet()">Batal</button>
+    </div>
+</div>
 
 </body>
 </html>
