@@ -1,34 +1,35 @@
-<script>
-    function openActionSheet(urlDetail, urlBenefit) {
-        const overlay = document.getElementById('overlay');
-        const sheet = document.getElementById('actionSheet');
+/* =========================================
+   POPUP DINAMIS – 1 PAKET = 4 HALAMAN
+========================================= */
 
-        // Tampilkan elemen dulu
-        overlay.style.display = 'block';
-        sheet.style.display = 'block';
+function openActionSheet(links) {
+    const overlay = document.getElementById('overlay');
+    const sheet = document.getElementById('actionSheet');
 
-        // Berikan jeda 10ms agar transisi CSS terbaca
-        setTimeout(() => {
-            overlay.classList.add('active');
-            sheet.classList.add('active');
-        }, 10);
+    overlay.style.display = 'block';
+    sheet.style.display = 'block';
 
-        // Atur link tombol
-        document.getElementById('btn-detail').onclick = () => window.location.href = urlDetail;
-        document.getElementById('btn-benefit').onclick = () => window.location.href = urlBenefit;
-    }
+    requestAnimationFrame(() => {
+        overlay.classList.add('active');
+        sheet.classList.add('active');
+    });
 
-    function closeActionSheet() {
-        const overlay = document.getElementById('overlay');
-        const sheet = document.getElementById('actionSheet');
+    document.getElementById('btn-detail').onclick = () => {
+        window.location.href = links.detail;
+    };
 
-        overlay.classList.remove('active');
-        sheet.classList.remove('active');
+    document.getElementById('btn-benefit').onclick = () => {
+        window.location.href = links.benefit;
+    };
 
-        // Sembunyikan elemen setelah animasi selesai (300ms)
-        setTimeout(() => {
-            overlay.style.display = 'none';
-            sheet.style.display = 'none';
-        }, 300);
-    }
-</script>
+    document.getElementById('btn-daftar').onclick = () => {
+        window.location.href = links.daftar;
+    };
+
+    // PERUBAHAN DI SINI:
+    // Menggunakan window.open agar WhatsApp terbuka di tab baru (_blank)
+    // sehingga halaman utama & popup tidak hilang/tertutup.
+    document.getElementById('btn-konsultasi').onclick = () => {
+    window.open(links.konsultasi, '_blank');
+};
+}

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff; /* Latar belakang putih bersih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container utama dengan margin 50px di semua sisi */
+.wrapper {
+    width: 100%;
+    max-width: 1920px; 
+    padding: 50px; 
+}
+
+/* Kotak Detail Biru */
+.detail-box {
+    background-color: #0070f3;
+    color: #ffffff;
+    border-radius: 50px; /* Corner 50px */
+    padding: 80px 60px 60px 60px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Tombol X Bulat */
+.btn-close {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%; /* Shape Bulat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn-close span {
+    color: #0070f3;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    transform: scale(1.1) rotate(90deg);
+    background-color: #f0f0f0;
+}
+
+/* Konten Teks */
+.content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsif untuk Layar Kecil */
+@media (max-width: 768px) {
+    .wrapper { padding: 20px; }
+    .detail-box { border-radius: 30px; padding: 60px 30px 30px 30px; }
+    .content h1 { font-size: 2rem; }
+    .btn-close { width: 50px; height: 50px; top: 20px; right: 20px; }
+}

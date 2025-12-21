@@ -281,7 +281,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Overlay Hitam Transparan */
+/* Overlay (Latar belakang pudar) */
 .ios-overlay {
     position: fixed;
     top: 0;
@@ -290,33 +290,38 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
-    display: none;
+    display: none; /* Dikontrol oleh JS */
+    opacity: 0;
+    transition: opacity 0.3s ease;
     z-index: 1001;
 }
 
 .ios-overlay.active {
-    display: block;
+    opacity: 1;
 }
 
+/* Action Sheet (Pop-up di Tengah) */
 .ios-action-sheet {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; /* Ke tengah vertikal */
+    left: 50%; /* Ke tengah horizontal */
+    /* translate(-50%, -50%) untuk memastikan benar-benar di pusat */
+    /* scale(0.9) memberikan efek 'pop' saat muncul */
+    transform: translate(-50%, -50%) scale(0.9); 
+    display: none; /* Dikontrol oleh JS */
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-    z-index: 1001;
     width: 90%;
     max-width: 380px;
+    z-index: 1002;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .ios-action-sheet.active {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Kembali ke ukuran asli */
     pointer-events: auto;
 }
-
-
 /* Grup Tombol */
 .ios-group {
     background: rgba(255, 255, 255, 0.85);
