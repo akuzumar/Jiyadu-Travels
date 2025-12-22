@@ -332,3 +332,42 @@ body {
     background-color: #f0f7ff;
     color: #0070f3 !important;
 }
+
+/* Membuat kotak menjadi full screen dalam grid */
+.feature-item.full-feature {
+    grid-column: 1 / -1; /* Memaksa kotak mengambil semua kolom dari kiri ke kanan */
+    margin: 30px;        /* Margin 30px sesuai permintaan */
+    text-align: left;    /* Teks rata kiri */
+    width: auto;         /* Memastikan lebar mengikuti margin */
+}
+
+/* Memastikan teks judul juga rata kiri */
+.feature-item.full-feature h3 {
+    text-align: left;
+}
+
+/* Menghilangkan bullet default dan mengatur perataan */
+.feature-list {
+    list-style: none; /* Menghilangkan titik bawaan jika ingin ganti simbol sendiri */
+    padding: 0;
+    margin-top: 20px;
+    text-align: left; /* Memastikan list rata kiri */
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 25px; /* Memberi ruang untuk simbol custom */
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Membuat simbol poin custom (misal: tanda centang atau bulatan kecil) */
+.feature-list li::before {
+    content: "•"; /* Anda bisa ganti dengan "✔" jika suka */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color); /* Menggunakan warna biru dari root CSS Anda */
+    font-weight: bold;
+}
+

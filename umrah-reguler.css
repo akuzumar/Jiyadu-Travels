@@ -148,14 +148,14 @@ body {
 .content-block h2 {
     font-size: 2.5rem;
     color: var(--text-dark);
-    margin-bottom: 40px;
+    margin-bottom: 4px;
 }
 
 .features-grid {
     display: grid;
     /* Grid 3x3 yang memastikan simetri */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
+    gap: 45px;
     
     /* MENGHAPUS SEMUA KODE PENENGAHAN KHUSUS (width: fit-content) 
        karena sekarang kita punya 3 kolom simetris */

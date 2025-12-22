@@ -93,7 +93,6 @@ body {
 
 .main-nav ul li {
     margin-left: 30px;
-    position: relative;
 }
 
 .main-nav ul li a {
@@ -141,7 +140,7 @@ body {
 
 /* 3. Content Block */
 .content-block {
-    padding: 80px 0;
+    padding: 0px 0;
     text-align: center;
 }
 
@@ -276,12 +275,88 @@ body {
     .features-grid {
         grid-template-columns: 1fr; /* Di layar kecil, jadikan 1 kolom saja */
     }
-    
 }
+.slider-container {
+    width: 100%;
+    max-width: 1920px; /* Lebar FHD sesuai permintaan Anda */
+    height: 500px;      /* Tinggi sesuai permintaan Anda */
+    margin: 0 auto;    /* Margin 0 agar menempel dengan Nav Bar */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;        /* Di bawah z-index header agar tidak menutupi menu dropdown jika ada */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* MENAMBAHKAN INI UNTUK MENGHILANGKAN CELAH PIXEL DI BAWAH GAMBAR */
+}
+
+.slider {
+    display: flex;
+    width: 500%; /* BERUBAH untuk 4 foto */
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    width: 25%; /* BERUBAH (100 / 4 = 25) */
+    height: 100%;
+    cursor: pointer;
+}
+
+.slider-container {
+    margin: 0 auto; /* Pastikan tetap 0 agar tidak ada bar putih di bawah */
+    /* ... sisa kode lainnya ... */
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Tambahkan ini agar dot bisa diklik */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto tidak gepeng */
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* Pastikan li induk memiliki posisi relative */
+.main-nav ul li {
+    position: relative;
+}
+
 /* Desain Dasar Popup */
 .tutorial-sheet {
-    display: none; 
-    position: absolute; /* Menempel pada li terdekat yang relative */
+    display: none; /* Sembunyi secara default */
+    position: absolute;
     top: 100%; /* Pas di bawah navbar */
     left: 50%;
     transform: translateX(-50%) translateY(15px);
@@ -292,7 +367,7 @@ body {
     z-index: 2000;
     padding: 10px 0;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Animasi halus */
 }
 
 /* Class ini akan dipicu oleh JavaScript */
@@ -333,41 +408,101 @@ body {
     color: #0070f3 !important;
 }
 
-/* Membuat kotak menjadi full screen dalam grid */
-.feature-item.full-feature {
-    grid-column: 1 / -1; /* Memaksa kotak mengambil semua kolom dari kiri ke kanan */
-    margin: 30px;        /* Margin 30px sesuai permintaan */
-    text-align: left;    /* Teks rata kiri */
-    width: auto;         /* Memastikan lebar mengikuti margin */
-}
-
-/* Memastikan teks judul juga rata kiri */
-.feature-item.full-feature h3 {
-    text-align: left;
-}
-
-/* Menghilangkan bullet default dan mengatur perataan */
-.feature-list {
-    list-style: none; /* Menghilangkan titik bawaan jika ingin ganti simbol sendiri */
-    padding: 0;
-    margin-top: 20px;
-    text-align: left; /* Memastikan list rata kiri */
-}
-
-.feature-list li {
-    position: relative;
-    padding-left: 25px; /* Memberi ruang untuk simbol custom */
-    margin-bottom: 10px;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-/* Membuat simbol poin custom (misal: tanda centang atau bulatan kecil) */
-.feature-list li::before {
-    content: "•"; /* Anda bisa ganti dengan "✔" jika suka */
-    position: absolute;
+/* Latar belakang transparan di belakang iklan */
+.ad-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
-    color: var(--primary-color); /* Menggunakan warna biru dari root CSS Anda */
-    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
+/* Wadah konten iklan */
+.ad-content {
+    position: relative;
+    max-width: 90%;
+}
+
+/* Gambar dengan corner 50px */
+.ad-content img {
+    display: block;
+    border-radius: 30px; /* Sesuai permintaan Anda */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Tombol silang lingkaran 15px */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px; /* Ukuran total tombol */
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 50%; /* Membuat lingkaran sempurna */
+    cursor: pointer;
+    font-size: 15px; /* Ukuran tanda silang */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+
+/* Posisi Tombol GIF */
+/* Tombol Bulat di Pojok */
+.floating-contact {
+    position: fixed !important;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 9998;
+    transition: transform 0.3s ease;
+}
+
+.floating-contact:hover {
+    transform: scale(1.1);
+}
+
+.floating-contact img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Popup Kotak Opsi */
+.contact-sheet {
+    position: fixed !important;
+    bottom: 100px !important;
+    right: 20px !important;
+    left: auto !important;
+    width: 260px !important;
+    background: #ffffff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    z-index: 9999 !important;
+    display: none; /* Dikontrol JS */
+    opacity: 0;
+    transform: translateY(20px) !important;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+}
+
+.contact-sheet.active {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
