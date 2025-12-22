@@ -93,6 +93,7 @@ body {
 
 .main-nav ul li {
     margin-left: 30px;
+    position: relative;
 }
 
 .main-nav ul li a {
@@ -140,7 +141,7 @@ body {
 
 /* 3. Content Block */
 .content-block {
-    padding: 0px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -275,88 +276,12 @@ body {
     .features-grid {
         grid-template-columns: 1fr; /* Di layar kecil, jadikan 1 kolom saja */
     }
+    
 }
-.slider-container {
-    width: 100%;
-    max-width: 1920px; /* Lebar FHD sesuai permintaan Anda */
-    height: 500px;      /* Tinggi sesuai permintaan Anda */
-    margin: 0 auto;    /* Margin 0 agar menempel dengan Nav Bar */
-    overflow: hidden;
-    position: relative;
-    z-index: 1;        /* Di bawah z-index header agar tidak menutupi menu dropdown jika ada */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; /* MENAMBAHKAN INI UNTUK MENGHILANGKAN CELAH PIXEL DI BAWAH GAMBAR */
-}
-
-.slider {
-    display: flex;
-    width: 400%; /* BERUBAH untuk 4 foto */
-    height: 100%;
-    transition: transform 0.8s ease-in-out;
-}
-
-.slide {
-    width: 25%; /* BERUBAH (100 / 4 = 25) */
-    height: 100%;
-    cursor: pointer;
-}
-
-.slider-container {
-    margin: 0 auto; /* Pastikan tetap 0 agar tidak ada bar putih di bawah */
-    /* ... sisa kode lainnya ... */
-}
-
-.dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10; /* Tambahkan ini agar dot bisa diklik */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Foto tidak gepeng */
-}
-
-.dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #fff;
-}
-
-/* Pastikan li induk memiliki posisi relative */
-.main-nav ul li {
-    position: relative;
-}
-
 /* Desain Dasar Popup */
 .tutorial-sheet {
-    display: none; /* Sembunyi secara default */
-    position: absolute;
+    display: none; 
+    position: absolute; /* Menempel pada li terdekat yang relative */
     top: 100%; /* Pas di bawah navbar */
     left: 50%;
     transform: translateX(-50%) translateY(15px);
@@ -367,7 +292,7 @@ body {
     z-index: 2000;
     padding: 10px 0;
     opacity: 0;
-    transition: all 0.3s ease; /* Animasi halus */
+    transition: all 0.3s ease;
 }
 
 /* Class ini akan dipicu oleh JavaScript */

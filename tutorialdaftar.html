@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial Daftar - Jiyadu Travel</title>
-    <link rel="stylesheet" href="tutorial.css">
+    <link rel="stylesheet" href="tutorial-umrah.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         .highlight-box {
@@ -34,13 +34,92 @@
             <div class="logo">
                 <a href="index.html" style="text-decoration: none; color: inherit; cursor: pointer;">Jiyadu Travel</a>
             </div>
+            
             <nav class="main-nav">
                 <ul>
-                    <li><a href="tutorialdaftar.html">Tutorial Daftar</a></li>
-                    <li><a href="layanankami.html">Layanan Kami</a></li>
-                    <li><a href="produkkami.html">Produk Kami</a></li>
-                    <li><a href="kerjasama.html">Kerja Sama</a></li>
-                    <li><a href="supportorsponsor.html">Support or Sponsor</a></li>
+                    <li>
+    <a href="javascript:void(0)" onclick="toggleTutorialPopup(event)">Tutorial Daftar</a>
+    
+    <div id="tutorial-popup" class="tutorial-sheet">
+        <div class="sheet-content">
+            <h4>Pilih Jenis Panduan:</h4>
+            <ul class="sheet-menu">
+                <li><a href="tutorial-umrah.html"><span>🕋</span> Panduan Umrah</a></li>
+                <li><a href="tutorial-haji.html"><span>📜</span> Panduan Haji</a></li>
+                <li><a href="tutorial-pembayaran.html"><span>💳</span> Cara Pembayaran</a></li>
+                <li><a href="tutorial-dokumen.html"><span>📂</span> Berkas Pendaftaran</a></li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+
+                    <li>
+    <a href="javascript:void(0)" onclick="toggleLayananPopup(event)">Layanan Kami</a>
+    
+    <div id="layanan-popup" class="tutorial-sheet">
+        <div class="sheet-content">
+            <h4>Layanan Jiyadu:</h4>
+            <ul class="sheet-menu">
+                <li><a href="umrah-reguler.html">🕋 Umrah Reguler</a></li>
+                <li><a href="umrah-plus.html">🌍 Umrah Plus Wisata</a></li>
+                <li><a href="haji-furoda.html">📜 Haji Furoda</a></li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+                    <li>
+    <a href="javascript:void(0)" onclick="toggleProdukPopup(event)">Produk Kami</a>
+    
+    <div id="produk-popup" class="tutorial-sheet">
+        <div class="sheet-content">
+            <h4>Produk Jiyadu:</h4>
+            <ul class="sheet-menu">
+                <li><a href="tabungan-umrah.html">💰 Tabungan Umrah</a></li>
+                <li><a href="perlengkapan.html">🎒 Perlengkapan Ibadah</a></li>
+                <li><a href="asuransi.html">🛡️ Asuransi Perjalanan</a></li>
+                <li><a href="souvenir.html">🎁 Souvenir Haji/Umrah</a></li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+
+                    <li>
+    <a href="javascript:void(0)" onclick="toggleKerjasamaPopup(event)">Kerja Sama</a>
+    
+    <div id="kerjasama-popup" class="tutorial-sheet">
+        <div class="sheet-content">
+            <h4>Program Kerja Sama:</h4>
+            <ul class="sheet-menu">
+                <li><a href="kemitraan-agen.html">🤝 Kemitraan Agen</a></li>
+                <li><a href="corporate-program.html">🏢 Program Korporat</a></li>
+                <li><a href="affiliate.html">🔗 Program Afiliasi</a></li>
+                <li><a href="investasi.html">📈 Investasi Syariah</a></li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+
+
+
+                    <li>
+    <a href="javascript:void(0)" onclick="toggleSupportPopup(event)">Support or Sponsor</a>
+    
+    <div id="support-popup" class="tutorial-sheet">
+        <div class="sheet-content">
+            <h4>Dukungan & Sponsor:</h4>
+            <ul class="sheet-menu">
+                <li><a href="donasi.html">❤️ Donasi Program</a></li>
+                <li><a href="partnership.html">🤝 Menjadi Sponsor</a></li>
+                <li><a href="csr.html">🌱 Program CSR</a></li>
+                <li><a href="kontak-khusus.html">📞 Hubungi Manajemen</a></li>
+            </ul>
+        </div>
+    </div>
+</li>
                 </ul>
             </nav>
             <div class="header-actions">
