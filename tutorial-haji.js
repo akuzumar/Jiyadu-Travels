@@ -273,3 +273,39 @@ window.addEventListener('click', function(e) {
         }
     });
 });
+
+
+function toggleContactPopup(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    const popup = document.getElementById('contact-popup');
+    
+    if (popup.classList.contains('active')) {
+        popup.classList.remove('active');
+        setTimeout(() => { 
+            popup.style.display = 'none'; 
+        }, 300);
+    } else {
+        // Sembunyikan popup lain jika ada yang terbuka
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.classList.add('active');
+        }, 10);
+    }
+}
+
+// Menutup popup jika klik di mana saja selain di dalam popup
+window.addEventListener('click', function(e) {
+    const popup = document.getElementById('contact-popup');
+    const btn = document.querySelector('.floating-contact');
+    
+    if (popup && popup.classList.contains('active')) {
+        if (!popup.contains(e.target) && !btn.contains(e.target)) {
+            popup.classList.remove('active');
+            setTimeout(() => { popup.style.display = 'none'; }, 300);
+        }
+    }
+});
